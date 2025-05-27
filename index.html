@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide urbanistique SCoT et PLU pour Saint-Bauzille-de-Putois">
+    <title>SCoT et PLU - Guide stratégique pour Saint-Bauzille-de-Putois</title>
+    <style>
+        :root {
+            --primary: #074636;
+            --primary-light: #0a5c47;
+            --primary-lighter: #0e7359;
+            --primary-dark: #053028;
+            --accent: #e8f5f0;
+            --accent-dark: #c3e6d9;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --success: #059669;
+            --info: #3b82f6;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4b5563;
+            --bg-white: #ffffff;
+            --bg-gray: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-white);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--bg-gray);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Main content */
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.6s ease-out;
+            scroll-margin-top: 80px; /* Ajout pour compenser le menu sticky */
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+        }
+
+        h4 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(7, 70, 54, 0.1);
+        }
+
+        .benefit-card {
+            border-left: 4px solid var(--success);
+            background-color: #f0fdf4;
+        }
+
+        .question-card {
+            border-left: 4px solid var(--info);
+            background-color: #eff6ff;
+            margin-bottom: 1rem;
+        }
+
+        .question-card h4 {
+            color: var(--info);
+            margin-top: 0;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background-color: var(--accent);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Icons */
+        .icon {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Sources */
+        .source {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            text-decoration: none;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .source:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .source-container {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--bg-gray);
+            border-radius: 0.5rem;
+        }
+
+        /* Statistics */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Alert boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .alert-warning {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+        }
+
+        .alert-info {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+            color: #1e3a8a;
+        }
+
+        .alert-success {
+            background-color: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.25rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            background-color: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-item h4 {
+            margin-top: 0;
+        }
+
+        /* Grid layout */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.875rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            table {
+                font-size: 0.875rem;
+            }
+            
+            th, td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll to top button */
+        #scrollTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #scrollTop.show {
+            opacity: 1;
+        }
+
+        #scrollTop:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SCoT et PLU : Guide stratégique</h1>
+            <p class="subtitle">Comprendre les enjeux d'urbanisme pour Saint-Bauzille-de-Putois</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#contexte">Contexte national</a></li>
+                <li><a href="#scenarios">Scénarios possibles</a></li>
+                <li><a href="#avantages-plu">Avantages du PLU</a></li>
+                <li><a href="#coherence-analyse">Analyse de cohérence</a></li>
+                <li><a href="#timing-analyse">Timing optimal</a></li>
+                <li><a href="#subventions">Impact financier</a></li>
+                <li><a href="#questions-reponses">Questions fréquentes</a></li>
+                <li><a href="#recommandations">Recommandations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section id="contexte">
+                <h2>Contexte national des SCoT</h2>
+                
+                <div class="alert alert-info">
+                    <div>ℹ️</div>
+                    <div>
+                        <strong>Le SCoT (Schéma de Cohérence Territoriale)</strong> est un document de planification stratégique à l'échelle intercommunale qui définit les grandes orientations d'aménagement pour 15-20 ans.
+                    </div>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">41,2%</div>
+                        <div class="stat-label">du territoire national couvert par un SCoT approuvé</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">76-79%</div>
+                        <div class="stat-label">du territoire avec SCoT (approuvés + en cours)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">64,2%</div>
+                        <div class="stat-label">de la population française couverte</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Points clés à retenir</h3>
+                    <ul>
+                        <li><strong>Non obligatoire mais structurant :</strong> Le SCoT n'est pas juridiquement obligatoire pour les communes</li>
+                        <li><strong>Règle d'urbanisation limitée :</strong> Sans SCoT, application de l'article L.142-4 du Code de l'urbanisme</li>
+                        <li><strong>Objectif national :</strong> Couverture intégrale du territoire à terme</li>
+                        <li><strong>Saint-Bauzille-de-Putois :</strong> Dans le périmètre d'étude du SCoT valant PCAET des Cévennes Gangeoises et Suménoises (en cours)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>⚡ Comment fonctionne l'approbation d'un SCoT ?</h3>
+                    <p><strong>Important :</strong> L'approbation du SCoT ne dépend pas d'un vote de chaque conseil municipal.</p>
+                    <ul>
+                        <li><strong>Qui approuve ?</strong> L'établissement public compétent (syndicat mixte ou EPCI) via ses délégués</li>
+                        <li><strong>Rôle des communes :</strong> Participation via leurs représentants, pas de vote individuel</li>
+                        <li><strong>Si une commune s'oppose :</strong> Son opposition ne bloque pas l'approbation si la majorité est atteinte</li>
+                        <li><strong>Conséquence :</strong> Une fois approuvé, le SCoT s'impose à toutes les communes du périmètre, même opposées</li>
+                        <li><strong>Obligation :</strong> Mise en compatibilité des documents d'urbanisme sous 1 à 3 ans</li>
+                    </ul>
+                    <p><em>→ Saint-Bauzille ne pourra pas sortir du périmètre une fois le SCoT approuvé, même en cas d'opposition.</em></p>
+                </div>
+
+                <div class="source-container">
+                    <strong>Sources juridiques :</strong>
+                    <a href="https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074075/" class="source" target="_blank" rel="noopener noreferrer">Code de l'urbanisme - Légifrance</a>
+                    <a href="https://kadran.com/urbanisme/le-plan-local-urbanisme/scot-et-plu-quelle-compatibilite/" class="source" target="_blank" rel="noopener noreferrer">Compatibilité SCoT/PLU - Analyse juridique</a>
+                    <a href="https://www.storys-international.com/post/r%C3%A8gles-g%C3%A9n%C3%A9rales-du-droit-de-l-urbanisme" class="source" target="_blank" rel="noopener noreferrer">Règles générales du droit de l'urbanisme</a>
+                </div>
+            </section>
+
+            <section id="timing-analyse">
+                <h2>Analyse du calendrier optimal : PLU avant ou après le SCoT ?</h2>
+                
+                <div class="card">
+                    <h3>Contexte décisionnel</h3>
+                    <p>Avec un SCoT en cours d'élaboration (approbation prévue sous 12-18 mois), deux stratégies s'offrent à la commune :</p>
+                    <ul>
+                        <li><strong>Option A :</strong> Lancer le PLU immédiatement en parallèle du SCoT</li>
+                        <li><strong>Option B :</strong> Attendre l'approbation du SCoT pour lancer le PLU</li>
+                    </ul>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>📊 Option A : Lancement immédiat</h4>
+                        <p><strong>Durée totale : 24 mois environ</strong></p>
+                        <ul>
+                            <li>Procédures menées en parallèle</li>
+                            <li>Ajustements possibles en cours d'élaboration</li>
+                            <li>Coordination avec les études SCoT</li>
+                            <li>Application du RNU pendant 24 mois seulement</li>
+                        </ul>
+                        <p><strong>Risques :</strong> Ajustements post-approbation du SCoT (procédure de modification simplifiée)</p>
+                    </div>
+                    <div class="card">
+                        <h4>⏳ Option B : Attente du SCoT</h4>
+                        <p><strong>Durée totale : 36-42 mois</strong></p>
+                        <ul>
+                            <li>Attente SCoT : 12-18 mois</li>
+                            <li>Élaboration PLU : 18-24 mois</li>
+                            <li>Compatibilité garantie dès le départ</li>
+                            <li>Application du RNU pendant 36-42 mois</li>
+                        </ul>
+                        <p><strong>Avantage :</strong> Aucun risque d'incompatibilité</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🔍 Impact de la loi ZAN sur le RNU (2025-2034)</h3>
+                    <p>La loi Climat et Résilience impose une trajectoire de réduction de l'artificialisation qui impacte directement les communes sous RNU :</p>
+                    <table style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th>Période</th>
+                                <th>Objectif ZAN</th>
+                                <th>Impact sur le RNU</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2021-2031</td>
+                                <td>-50% d'artificialisation</td>
+                                <td>Interprétation plus stricte des "parties urbanisées"</td>
+                            </tr>
+                            <tr>
+                                <td>2031-2050</td>
+                                <td>Zéro artificialisation nette</td>
+                                <td>Construction quasi-impossible hors renouvellement urbain</td>
+                            </tr>
+                            <tr>
+                                <td>Dès 2025</td>
+                                <td>Comptabilisation stricte</td>
+                                <td>Chaque m² artificialisé sous RNU compte dans le quota</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Conséquence :</strong> Plus l'attente se prolonge, plus les marges de manœuvre se réduisent mécaniquement.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Analyse comparative des impacts</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critère</th>
+                                    <th>Lancement immédiat</th>
+                                    <th>Attente du SCoT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Projets bloqués</strong></td>
+                                    <td>24 mois</td>
+                                    <td>36-42 mois</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quota ZAN consommé</strong></td>
+                                    <td>~2 ans de quota</td>
+                                    <td>~3-4 ans de quota</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Coût des études</strong></td>
+                                    <td>Possibilité de mutualisation</td>
+                                    <td>Études séparées</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Subventions</strong></td>
+                                    <td>Disponibles en 2025</td>
+                                    <td>Incertaines en 2026-2027</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Risque politique</strong></td>
+                                    <td>Élections 2026 sans impact</td>
+                                    <td>Élections 2026 critiques</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <div>📋</div>
+                    <div>
+                        <strong>Éléments factuels à considérer :</strong>
+                        <ul style="margin-bottom: 0;">
+                            <li>La mise en compatibilité PLU/SCoT dispose d'un délai légal de 3 ans</li>
+                            <li>Les modifications simplifiées de PLU prennent 6 mois en moyenne</li>
+                            <li>Le RNU devient mathématiquement plus contraignant chaque année (quota ZAN)</li>
+                            <li>Les études PLU peuvent alimenter la réflexion SCoT si menées en parallèle</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="subventions">
+                <h2>Impact sur les financements et subventions</h2>
+                
+                <div class="card">
+                    <h3>Pas de conditionnalité formelle, mais...</h3>
+                    <p>Il n'existe pas de condition obligatoire d'avoir un SCoT ou PLU pour accéder aux subventions nationales (DETR, DSIL). Cependant, les impacts indirects sont significatifs :</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Attractivité des dossiers</h4>
+                        <p>Les projets s'inscrivant dans une planification territoriale cohérente sont mieux notés lors des appels à projets.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Éligibilité élargie</h4>
+                        <p>Certains projets structurants nécessitent une vision territoriale claire pour être éligibles.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Bonus écologiques</h4>
+                        <p>Les projets intégrés dans une démarche de planification durable bénéficient souvent de bonifications.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Programmes territoriaux</h4>
+                        <p>Accès facilité aux programmes type "Action Cœur de Ville", "Petites villes de demain", etc.</p>
+                    </div>
+                </div>
+
+                <div class="source-container">
+                    <strong>Sources :</strong>
+                    <a href="https://www.herault.gouv.fr" class="source" target="_blank" rel="noopener noreferrer">Préfecture de l'Hérault – DETR/DSIL</a>
+                    <a href="https://www.anct.gouv.fr" class="source" target="_blank" rel="noopener noreferrer">ANCT – Programmes territoriaux</a>
+                    <a href="https://www.club-plui.logement.gouv.fr/guide-articuler-scot-et-plu-i-a637.html" class="source" target="_blank" rel="noopener noreferrer">Guide officiel « Articuler SCoT et PLU(i) »</a>
+                </div>
+            </section>
+
+            <section id="scenarios">
+                <h2>Les 4 scénarios d'urbanisme possibles</h2>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Scénario</th>
+                                <th>Situation</th>
+                                <th>Conséquences principales</th>
+                                <th>Niveau de contrainte</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Optimal</strong></td>
+                                <td>✅ Avec SCoT<br>✅ Avec PLU</td>
+                                <td>
+                                    • Maîtrise totale du développement<br>
+                                    • Constructibilité maximale<br>
+                                    • Accès facilité aux financements
+                                </td>
+                                <td><span style="color: var(--success);">Minimal</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Intermédiaire +</strong></td>
+                                <td>✅ Avec SCoT<br>❌ Sans PLU (RNU)</td>
+                                <td>
+                                    • Construction limitée aux zones urbanisées<br>
+                                    • Pas de zonage précis<br>
+                                    • Développement au cas par cas
+                                </td>
+                                <td><span style="color: var(--warning);">Modéré</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Intermédiaire -</strong></td>
+                                <td>❌ Sans SCoT<br>✅ Avec PLU</td>
+                                <td>
+                                    • Règle d'urbanisation limitée<br>
+                                    • Dérogations préfectorales nécessaires<br>
+                                    • Complexité administrative
+                                </td>
+                                <td><span style="color: var(--warning);">Élevé</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Défavorable</strong></td>
+                                <td>❌ Sans SCoT<br>❌ Sans PLU (RNU)</td>
+                                <td>
+                                    • Constructibilité très restreinte<br>
+                                    • Développement quasi-impossible<br>
+                                    • Perte d'attractivité majeure
+                                </td>
+                                <td><span style="color: var(--danger);">Maximal</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-warning">
+                    <div>⚠️</div>
+                    <div>
+                        <strong>Situation actuelle :</strong> Saint-Bauzille-de-Putois fait partie du périmètre d'étude du SCoT valant PCAET des Cévennes Gangeoises et Suménoises (en cours d'élaboration, non encore approuvé). La commune n'a pas de PLU (opposition du maire actuel) et reste donc sous le régime du RNU.
+                    </div>
+                </div>
+            </section>
+
+            <section id="avantages-plu">
+                <h2>Les avantages concrets d'un PLU</h2>
+                
+                <div class="alert alert-success" style="text-align: center; font-size: 1.25rem; padding: 2rem;">
+                    <div>
+                        <strong style="font-size: 1.5rem; color: var(--primary);">PLU que moins !</strong><br>
+                        <em>Protéger ce qu'on aime, développer ce dont on a besoin.</em>
+                    </div>
+                </div>
+                
+                <div class="grid-2col">
+                    <div class="card benefit-card">
+                        <h3>🏘️ Maîtrise du développement</h3>
+                        <p>Le PLU permet à la commune de fixer ses propres règles d'urbanisme, adaptées à ses spécificités locales, plutôt que de subir des règles nationales uniformes.</p>
+                    </div>
+
+                    <div class="card benefit-card">
+                        <h3>🤝 Concertation citoyenne</h3>
+                        <p>L'élaboration implique une large concertation avec habitants, associations et acteurs locaux, garantissant la prise en compte des attentes de la population.</p>
+                    </div>
+
+                    <div class="card benefit-card">
+                        <h3>🌿 Protection environnementale</h3>
+                        <p>Préservation des espaces naturels, agricoles et forestiers. Création d'espaces verts et gestion durable des ressources locales.</p>
+                    </div>
+
+                    <div class="card benefit-card">
+                        <h3>🏗️ Qualité urbaine</h3>
+                        <p>Imposition de règles pour la qualité architecturale, l'intégration paysagère, la biodiversité et le confort climatique des nouveaux projets.</p>
+                    </div>
+
+                    <div class="card benefit-card">
+                        <h3>💼 Développement économique</h3>
+                        <p>Identification des zones propices aux activités économiques (commerces, artisanat, entreprises), création d'emplois locaux.</p>
+                    </div>
+
+                    <div class="card benefit-card">
+                        <h3>🔍 Transparence</h3>
+                        <p>Processus d'enquête publique garantissant des décisions transparentes avec possibilité pour tous de s'informer et de participer.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div>✨</div>
+                    <div>
+                        <strong>Vision à long terme :</strong> Le PLU donne une vision claire du développement futur de la commune sur 10-15 ans, en anticipant l'évolution des besoins en logements, équipements et services.
+                    </div>
+                </div>
+            </section>
+
+            <section id="coherence-analyse">
+                <h2>Questions fréquentes des habitants</h2>
+                
+                <div class="card">
+                    <p>Les questions ci-dessous reflètent l'ensemble des préoccupations des habitants, des plus enthousiastes aux plus sceptiques :</p>
+                </div>
+
+                <h3>🌟 Les bénéfices attendus du PLU</h3>
+
+                <div class="question-card">
+                    <h4>« Est-ce que je pourrai donner mon avis sur les projets de la commune ? »</h4>
+                    <p><strong>Oui !</strong> L'élaboration du PLU prévoit obligatoirement des réunions publiques et des consultations. Les nouveaux arrivants comme les anciens habitants peuvent participer équitablement.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Le PLU va-t-il protéger notre cadre de vie et nos espaces naturels ? »</h4>
+                    <p><strong>Absolument.</strong> Le PLU permet de classer et préserver les espaces naturels, agricoles et forestiers. Il peut aussi limiter certaines nuisances (antennes-relais, éoliennes) ou encadrer les locations touristiques type Airbnb.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Comment le PLU peut-il améliorer la vie quotidienne et favoriser l'emploi ? »</h4>
+                    <p>Il organise l'implantation des logements, commerces et équipements pour répondre aux besoins de toutes les générations. En réservant des zones d'activités, il encourage la création d'emplois locaux.</p>
+                </div>
+
+                <h3>💰 Questions sur le coût et le financement</h3>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Le PLU n'est-il pas trop cher pour notre commune (20 000 à 60 000€) ? »</h4>
+                    <p><strong>C'est un investissement rentable :</strong> Le coût est amorti sur 10-15 ans. Des subventions (DETR, Région) couvrent souvent 50% ou plus. Sans PLU, la commune perd des opportunités de développement et de financements. C'est le prix de la maîtrise de notre avenir.</p>
+                </div>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Comment financer le PLU avec notre budget serré ? »</h4>
+                    <p><strong>Des solutions existent :</strong> Étalement sur 2-3 exercices, mutualisation intercommunale, assistance technique gratuite du département, subventions jusqu'à 70% pour les petites communes. Le coût de l'inaction est souvent plus élevé.</p>
+                </div>
+
+                <h3>🏗️ Craintes sur la constructibilité et les contraintes</h3>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Le PLU ne va-t-il pas rendre mon terrain inconstructible et faire perdre sa valeur ? »</h4>
+                    <p><strong>Le PLU protège mieux vos droits que le RNU :</strong> Sans PLU, seules les zones déjà urbanisées sont constructibles. Le PLU peut ouvrir de nouvelles zones à la construction de façon réfléchie. La concertation permet d'exprimer vos projets. Les terrains bien zonés prennent souvent de la valeur.</p>
+                </div>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Est-ce qu'on ne risque pas d'avoir plus de contraintes qu'avant ? »</h4>
+                    <p><strong>Le PLU remplace des contraintes nationales par des règles locales adaptées.</strong> Il offre plus de souplesse que le RNU. Les "contraintes" sont des protections pour préserver la qualité de vie. Sans PLU, c'est l'État qui décide à votre place.</p>
+                </div>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Que faire si je ne suis pas d'accord avec le classement de mon terrain ? »</h4>
+                    <p><strong>Plusieurs recours possibles :</strong> Expression lors de la concertation, observations pendant l'enquête publique, rencontre avec le commissaire enquêteur, et en dernier recours, contestation motivée. Le dialogue prime toujours sur le conflit.</p>
+                </div>
+
+                <h3>⏱️ Questions sur les délais et la procédure</h3>
+
+                <div class="question-card">
+                    <h4>« Combien de temps va durer l'élaboration du PLU ? »</h4>
+                    <p><strong>Entre 18 et 24 mois en moyenne.</strong> Ce délai permet une vraie concertation et des études sérieuses. Pendant ce temps, les autorisations d'urbanisme continuent selon les règles actuelles. Un PLU bâclé génère plus de problèmes qu'il n'en résout.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Peut-on modifier le PLU une fois voté ? »</h4>
+                    <p><strong>Oui, le PLU est évolutif.</strong> Modifications simplifiées pour des ajustements mineurs (6 mois), révisions allégées pour des changements limités (1 an), révision générale si besoin (2 ans). Il s'adapte aux évolutions de la commune.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Qui décide vraiment du contenu du PLU ? »</h4>
+                    <p><strong>C'est une décision collective :</strong> Le conseil municipal vote, mais après consultation des habitants, des personnes publiques associées (État, Région, Département), et enquête publique. Le maire ne décide pas seul.</p>
+                </div>
+
+                <h3>⚖️ Risques juridiques et alternatives</h3>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Et si le PLU est annulé par le tribunal ? »</h4>
+                    <p><strong>Risque limité et gérable :</strong> Moins de 10% des PLU contestés sont annulés. Une procédure bien menée avec vraie concertation minimise ce risque. En cas d'annulation, le RNU s'applique temporairement et les corrections sont possibles.</p>
+                </div>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Pourquoi ne pas rester avec le RNU, c'est plus simple ? »</h4>
+                    <p><strong>Le RNU est une fausse simplicité :</strong> Construction limitée aux zones déjà urbanisées, pas de zones d'activités possibles, aucune adaptation locale, dépendance totale aux décisions préfectorales. C'est subir plutôt que choisir.</p>
+                </div>
+
+                <div class="question-card contradiction-card">
+                    <h4>« Le PLU va-t-il faire fuir les investisseurs ? »</h4>
+                    <p><strong>Au contraire !</strong> Les investisseurs préfèrent la visibilité et la sécurité juridique d'un PLU. Ils savent où et comment investir. Sans PLU, l'incertitude règne et décourage les projets sérieux.</p>
+                </div>
+
+                <h3>🔗 Articulation avec le SCoT</h3>
+
+                <div class="question-card">
+                    <h4>« Si on a déjà le SCoT, pourquoi faire un PLU ? »</h4>
+                    <p><strong>Le SCoT fixe les grandes orientations, le PLU les traduit concrètement.</strong> Le SCoT est l'échelle intercommunale (vision stratégique), le PLU est l'échelle communale (règles précises parcelle par parcelle). L'un ne remplace pas l'autre.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Le PLU peut-il aller contre le SCoT ? »</h4>
+                    <p><strong>Non, le PLU doit être compatible avec le SCoT.</strong> Mais "compatible" ne veut pas dire "identique". Le PLU a des marges de manœuvre pour adapter les orientations du SCoT aux réalités locales.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Que se passe-t-il si le SCoT change après notre PLU ? »</h4>
+                    <p><strong>Le PLU dispose de 3 ans pour se mettre en compatibilité.</strong> Cela permet d'anticiper et d'adapter progressivement sans tout refaire. Les évolutions du SCoT sont d'ailleurs concertées avec les communes.</p>
+                </div>
+
+                <div class="source-container">
+                    <strong>Sources juridiques :</strong>
+                    <a href="https://www.gossement-avocats.com/blog/urbanisme-scot-plu-refonte-des-rapports-juridiques-applicables-entre-les-documents-d-urbanisme/" class="source" target="_blank" rel="noopener noreferrer">Gossement Avocats – Compatibilité SCoT/PLU/PCAET</a>
+                    <a href="https://www.ecologie.gouv.fr/sites/default/files/documents/Guide_juridique_Orientations_Amenagement_et_Programmation_plu_-_nov_2019.pdf" class="source" target="_blank" rel="noopener noreferrer">Guide juridique OAP - Ministère</a>
+                </div>
+
+                <h3>🤝 Gestion des conflits et transparence</h3>
+
+                <div class="question-card">
+                    <h4>« Comment gérer les désaccords entre voisins sur le zonage ? »</h4>
+                    <p><strong>Le PLU privilégie l'intérêt général sur les intérêts particuliers.</strong> La concertation permet d'exprimer tous les points de vue. Le commissaire enquêteur, indépendant, aide à trouver des équilibres. Les critères objectifs (desserte, risques, paysage) guident les choix.</p>
+                </div>
+
+                <div class="question-card">
+                    <h4>« Comment garantir la transparence des décisions ? »</h4>
+                    <p><strong>Multiple garde-fous :</strong> Réunions publiques, documents consultables en mairie et en ligne, registre de concertation, enquête publique avec commissaire indépendant, obligation de motiver les choix. Chacun peut suivre et comprendre le processus.</p>
+                </div>
+            </section>
+
+            <section id="questions-reponses">
+                <h2>Questions fréquentes des habitants</h2>
+                
+                <div class="card">
+                    <h3>Situation paradoxale identifiée</h3>
+                    <p>Saint-Bauzille-de-Putois présente une configuration singulière :</p>
+                    <ul>
+                        <li>✅ Participation active à l'élaboration du SCoT valant PCAET</li>
+                        <li>❌ Refus d'élaborer un PLU (position du maire actuel)</li>
+                    </ul>
+                    <p>Cette situation soulève des questions de cohérence stratégique et opérationnelle.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Analyse des implications</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Avec SCoT + PLU</th>
+                                <th>Avec SCoT sans PLU (situation visée)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Application des orientations</strong></td>
+                                <td>Déclinaison précise à la parcelle</td>
+                                <td>Impossible à traduire localement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Utilisation des opportunités</strong></td>
+                                <td>Zones de développement exploitables</td>
+                                <td>Blocage par le RNU</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Respect des obligations</strong></td>
+                                <td>Mise en compatibilité possible</td>
+                                <td>Contradiction juridique permanente</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Participation aux projets</strong></td>
+                                <td>Éligibilité maximale</td>
+                                <td>Exclusion de fait des projets structurants</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cohérence territoriale</strong></td>
+                                <td>Intégration complète</td>
+                                <td>Isolement progressif</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>💰 Conséquences financières</h4>
+                        <ul>
+                            <li><strong>Coûts engagés :</strong> Participation financière au SCoT (études, fonctionnement)</li>
+                            <li><strong>Bénéfices perdus :</strong> Impossibilité d'exploiter les zonages favorables</li>
+                            <li><strong>Double pénalité :</strong> Payer pour le SCoT + subir les contraintes du RNU</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>⚖️ Conséquences juridiques</h4>
+                        <ul>
+                            <li><strong>Obligation légale :</strong> Compatibilité PLU/SCoT sous 3 ans</li>
+                            <li><strong>Sans PLU :</strong> Impossibilité mathématique de respecter cette obligation</li>
+                            <li><strong>Risque :</strong> Mise sous tutelle préfectorale pour carence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🔄 Autres contradictions identifiées</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Engagement pris</th>
+                                    <th>Action cohérente attendue</th>
+                                    <th>Réalité contradictoire</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Signature du PCAET (volet climat)</td>
+                                    <td>Zones EnR dans le PLU</td>
+                                    <td>Impossible sans PLU</td>
+                                </tr>
+                                <tr>
+                                    <td>Objectifs logements du SCoT</td>
+                                    <td>Ouverture zones constructibles</td>
+                                    <td>RNU = construction limitée</td>
+                                </tr>
+                                <tr>
+                                    <td>Préservation espaces naturels</td>
+                                    <td>Zonage N et A protecteur</td>
+                                    <td>RNU = protection faible</td>
+                                </tr>
+                                <tr>
+                                    <td>Développement économique</td>
+                                    <td>Zones d'activités dédiées</td>
+                                    <td>RNU = pas de zones AUe</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobilités douces (PCAET)</td>
+                                    <td>Emplacements réservés vélo</td>
+                                    <td>RNU = pas d'ER possibles</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <div>📋</div>
+                    <div>
+                        <strong>Constats factuels :</strong>
+                        <ul style="margin-bottom: 0;">
+                            <li>La participation au SCoT engage financièrement et politiquement la commune</li>
+                            <li>L'absence de PLU rend impossible l'application locale du SCoT</li>
+                            <li>Cette situation génère des surcoûts sans bénéfices associés</li>
+                            <li>La commune risque un isolement territorial progressif</li>
+                            <li>Les engagements PCAET deviennent inapplicables sans PLU</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+                
+                <div class="card">
+                    <h3>Contexte décisionnel</h3>
+                    <p>Avec un SCoT en cours d'élaboration (approbation prévue sous 12-18 mois), deux stratégies s'offrent à la commune :</p>
+                    <ul>
+                        <li><strong>Option A :</strong> Lancer le PLU immédiatement en parallèle du SCoT</li>
+                        <li><strong>Option B :</strong> Attendre l'approbation du SCoT pour lancer le PLU</li>
+                    </ul>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card">
+                        <h4>📊 Option A : Lancement immédiat</h4>
+                        <p><strong>Durée totale : 24 mois environ</strong></p>
+                        <ul>
+                            <li>Procédures menées en parallèle</li>
+                            <li>Ajustements possibles en cours d'élaboration</li>
+                            <li>Coordination avec les études SCoT</li>
+                            <li>Application du RNU pendant 24 mois seulement</li>
+                        </ul>
+                        <p><strong>Risques :</strong> Ajustements post-approbation du SCoT (procédure de modification simplifiée)</p>
+                    </div>
+                    <div class="card">
+                        <h4>⏳ Option B : Attente du SCoT</h4>
+                        <p><strong>Durée totale : 36-42 mois</strong></p>
+                        <ul>
+                            <li>Attente SCoT : 12-18 mois</li>
+                            <li>Élaboration PLU : 18-24 mois</li>
+                            <li>Compatibilité garantie dès le départ</li>
+                            <li>Application du RNU pendant 36-42 mois</li>
+                        </ul>
+                        <p><strong>Avantage :</strong> Aucun risque d'incompatibilité</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🔍 Impact de la loi ZAN sur le RNU (2025-2034)</h3>
+                    <p>La loi Climat et Résilience impose une trajectoire de réduction de l'artificialisation qui impacte directement les communes sous RNU :</p>
+                    <table style="margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th>Période</th>
+                                <th>Objectif ZAN</th>
+                                <th>Impact sur le RNU</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2021-2031</td>
+                                <td>-50% d'artificialisation</td>
+                                <td>Interprétation plus stricte des "parties urbanisées"</td>
+                            </tr>
+                            <tr>
+                                <td>2031-2050</td>
+                                <td>Zéro artificialisation nette</td>
+                                <td>Construction quasi-impossible hors renouvellement urbain</td>
+                            </tr>
+                            <tr>
+                                <td>Dès 2025</td>
+                                <td>Comptabilisation stricte</td>
+                                <td>Chaque m² artificialisé sous RNU compte dans le quota</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Conséquence :</strong> Plus l'attente se prolonge, plus les marges de manœuvre se réduisent mécaniquement.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Analyse comparative des impacts</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Critère</th>
+                                    <th>Lancement immédiat</th>
+                                    <th>Attente du SCoT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Projets bloqués</strong></td>
+                                    <td>24 mois</td>
+                                    <td>36-42 mois</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quota ZAN consommé</strong></td>
+                                    <td>~2 ans de quota</td>
+                                    <td>~3-4 ans de quota</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Coût des études</strong></td>
+                                    <td>Possibilité de mutualisation</td>
+                                    <td>Études séparées</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Subventions</strong></td>
+                                    <td>Disponibles en 2025</td>
+                                    <td>Incertaines en 2026-2027</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Risque politique</strong></td>
+                                    <td>Élections 2026 sans impact</td>
+                                    <td>Élections 2026 critiques</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <div>📋</div>
+                    <div>
+                        <strong>Éléments factuels à considérer :</strong>
+                        <ul style="margin-bottom: 0;">
+                            <li>La mise en compatibilité PLU/SCoT dispose d'un délai légal de 3 ans</li>
+                            <li>Les modifications simplifiées de PLU prennent 6 mois en moyenne</li>
+                            <li>Le RNU devient mathématiquement plus contraignant chaque année (quota ZAN)</li>
+                            <li>Les études PLU peuvent alimenter la réflexion SCoT si menées en parallèle</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+                
+                <div class="card">
+                    <h3>Pas de conditionnalité formelle, mais...</h3>
+                    <p>Il n'existe pas de condition obligatoire d'avoir un SCoT ou PLU pour accéder aux subventions nationales (DETR, DSIL). Cependant, les impacts indirects sont significatifs :</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Attractivité des dossiers</h4>
+                        <p>Les projets s'inscrivant dans une planification territoriale cohérente sont mieux notés lors des appels à projets.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Éligibilité élargie</h4>
+                        <p>Certains projets structurants nécessitent une vision territoriale claire pour être éligibles.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Bonus écologiques</h4>
+                        <p>Les projets intégrés dans une démarche de planification durable bénéficient souvent de bonifications.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Programmes territoriaux</h4>
+                        <p>Accès facilité aux programmes type "Action Cœur de Ville", "Petites villes de demain", etc.</p>
+                    </div>
+                </div>
+
+                <div class="source-container">
+                    <strong>Sources :</strong>
+                    <a href="https://www.herault.gouv.fr" class="source" target="_blank" rel="noopener noreferrer">Préfecture de l'Hérault – DETR/DSIL</a>
+                    <a href="https://www.anct.gouv.fr" class="source" target="_blank" rel="noopener noreferrer">ANCT – Programmes territoriaux</a>
+                    <a href="https://www.club-plui.logement.gouv.fr/guide-articuler-scot-et-plu-i-a637.html" class="source" target="_blank" rel="noopener noreferrer">Guide officiel « Articuler SCoT et PLU(i) »</a>
+                </div>
+            </section>
+
+            <section id="recommandations">
+                <h2>Recommandations pour Saint-Bauzille-de-Putois</h2>
+                
+                <div class="card">
+                    <h3>Situation actuelle et enjeux critiques</h3>
+                    <p><strong>État des lieux :</strong> Saint-Bauzille-de-Putois se trouve actuellement dans le <span style="color: var(--danger);">scénario 4 (le plus défavorable)</span> :</p>
+                    <ul>
+                        <li>❌ <strong>Pas de PLU</strong> (opposition du maire actuel)</li>
+                        <li>❌ <strong>SCoT en cours d'étude</strong> (non encore approuvé)</li>
+                        <li>⚠️ <strong>Régime du RNU</strong> avec toutes ses contraintes</li>
+                    </ul>
+                    <p><strong>Évolution prévue :</strong> Une fois le SCoT approuvé (décision de l'établissement public, pas du conseil municipal), la commune passera au scénario 2, mais restera limitée sans PLU.</p>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">12%</div>
+                        <div class="stat-label">de l'enveloppe urbaine totale du SCoT<br><small style="opacity: 0.8; font-size: 0.8rem;">(Source : étude SCoT en cours - Agence Utopisme)</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30%</div>
+                        <div class="stat-label">des nouveaux logements du territoire<br><small style="opacity: 0.8; font-size: 0.8rem;">(Source : étude SCoT en cours - Agence Utopisme)</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">83,2%</div>
+                        <div class="stat-label">des déplacements en voiture (défi mobilité)<br><small style="opacity: 0.8; font-size: 0.8rem;">(Source : étude SCoT en cours - Agence Utopisme)</small></div>
+                    </div>
+                </div>
+
+                <div class="grid-2col">
+                    <div class="card benefit-card">
+                        <h3>✅ Atouts identifiés</h3>
+                        <ul>
+                            <li><strong>Pôle secondaire structurant</strong> du territoire</li>
+                            <li><strong>Attractivité résidentielle</strong> croissante</li>
+                            <li><strong>9,3 ha mobilisables</strong> pour la densification</li>
+                            <li><strong>31 logements vacants</strong> à réhabiliter</li>
+                            <li><strong>Faible émission GES</strong> : 3,2 teqCO₂/hab/an</li>
+                            <li><strong>Dynamique agricole</strong> préservée</li>
+                        </ul>
+                    </div>
+                    <div class="card contradiction-card">
+                        <h3>⚠️ Défis à relever</h3>
+                        <ul>
+                            <li><strong>Consommation d'ENAF > 80%</strong> (forte pression foncière)</li>
+                            <li><strong>Dépendance automobile</strong> élevée</li>
+                            <li><strong>Vieillissement démographique</strong></li>
+                            <li><strong>Mix énergétique</strong> à diversifier</li>
+                            <li><strong>Risque d'étalement urbain</strong></li>
+                            <li><strong>Vulnérabilité énergétique</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div>🎯</div>
+                    <div>
+                        <strong>Pistes d'action dans le contexte actuel :</strong>
+                        <ol>
+                            <li><strong>Constat :</strong> L'idéal aurait été de lancer un PLU dès 2020-2022 pour anticiper le SCoT et gagner 2-3 ans</li>
+                            <li><strong>Aujourd'hui :</strong> Deux options restent possibles - lancement immédiat ou attente du SCoT (voir analyse ci-dessus)</li>
+                            <li><strong>Mobilisation citoyenne :</strong> Créer une dynamique locale favorable au PLU via la concertation</li>
+                            <li><strong>Valorisation des atouts :</strong> Communiquer sur les 9,3 ha de densification et 31 logements vacants</li>
+                            <li><strong>Anticipation PCAET :</strong> Préparer les esprits aux futurs enjeux de transition énergétique</li>
+                            <li><strong>Dialogue politique :</strong> Rechercher un consensus municipal sur la nécessité d'un document d'urbanisme</li>
+                        </ol>
+                        <p><em>Note : Le choix entre lancement immédiat et attente du SCoT relève d'une décision politique qui doit peser les avantages et risques de chaque option.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Étapes recommandées pour le PLU</h3>
+                    <ol>
+                        <li><strong>Diagnostic territorial approfondi</strong> intégrant les enjeux PCAET</li>
+                        <li><strong>Concertation élargie</strong> sur les défis énergétiques et climatiques</li>
+                        <li><strong>PADD ambitieux</strong> conciliant développement et transition écologique</li>
+                        <li><strong>Règlement innovant</strong> favorisant la performance énergétique</li>
+                        <li><strong>OAP thématiques</strong> sur la mobilité durable et les énergies renouvelables</li>
+                        <li><strong>Évaluation environnementale</strong> renforcée</li>
+                    </ol>
+                </div>
+
+                <div class="alert alert-info">
+                    <div>💡</div>
+                    <div>
+                        <strong>Recommandation stratégique du SCoT :</strong> Positionner Saint-Bauzille-de-Putois comme territoire pilote de transition énergétique en expérimentant des solutions innovantes en matière d'habitat durable et de mobilité verte.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Opportunités spécifiques du SCoT valant PCAET</h3>
+                    <ul>
+                        <li><strong>Approche intégrée :</strong> Planification territoriale et climatique en un seul document</li>
+                        <li><strong>Financement facilité :</strong> Accès privilégié aux fonds transition écologique</li>
+                        <li><strong>Innovation territoriale :</strong> Possibilité d'expérimentations (habitat participatif, mobilités douces)</li>
+                        <li><strong>Mutualisation :</strong> Partage de ressources et bonnes pratiques intercommunales</li>
+                        <li><strong>Cohérence renforcée :</strong> Alignement automatique des politiques urbaines et climatiques</li>
+                        <li><strong>Loi ZAN :</strong> Anticipation de la trajectoire 2025-2034 de réduction de l'artificialisation</li>
+                    </ul>
+                </div>
+
+                <div class="source-container">
+                    <strong>Sources complémentaires :</strong>
+                    <a href="https://www.constructiondurable.net/loi-zan-2025-trace/" class="source" target="_blank" rel="noopener noreferrer">Loi ZAN et trajectoire 2025-2034</a>
+                    <a href="https://sensei-avocats.fr/flash/urbanisme-trois-ordonnances-pour-dynamiser-la-construction-de-logements/" class="source" target="_blank" rel="noopener noreferrer">Ordonnances récentes sur l'urbanisme</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button id="scrollTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    // Calcul de la position avec compensation pour le menu sticky
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Show/hide scroll to top button
+        const scrollButton = document.getElementById('scrollTop');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        };
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .stat-card, .question-card').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
